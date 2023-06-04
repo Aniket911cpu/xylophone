@@ -30,93 +30,34 @@ class _MyHomePageState extends State<MyHomePage> {
       player.play(DeviceFileSource('assets/note$num.wav'));
       player.setVolume(0.9);
     });
-  }
+  } //Function for Playing Sound
 
-  void ui() {}
+  Expanded ui(Color color, int sound) {
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          play(sound);
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll<Color>(color),
+        ),
+        child: Container(),
+      ),
+    );
+  } //Function for UI of Xylophone
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(1);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(2);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.orange),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(3);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.yellow),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(4);
-              },
-              style: const ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll<Color>(Colors.lightGreen),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(5);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.green),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(7);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue),
-              ),
-              child: Container(),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                play(1);
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.purple),
-              ),
-              child: Container(),
-            ),
-          ),
+          ui(Colors.red, 1),
+          ui(Colors.orange, 2),
+          ui(Colors.yellow, 3),
+          ui(Colors.lightGreen, 4),
+          ui(Colors.green, 5),
+          ui(Colors.blueAccent, 6),
+          ui(Colors.purpleAccent, 7),
         ],
       ),
       backgroundColor: Colors.black,
