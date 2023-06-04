@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       final player = AudioPlayer();
       player.play(DeviceFileSource('assets/note$num.wav'));
-      player.setVolume(1.0);
+      player.setVolume(0.9);
     });
   }
 
